@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zxpyar Profile</title>
+    <title>Zxpyar's Profile</title>
     <style>
         * {
             margin: 0;
@@ -150,13 +150,9 @@
 
         /* Transparency Control - Hidden by default */
         .transparency-control {
-            /* DIES IST DIE WICHTIGE ÄNDERUNG: display: none; */
             display: none; 
             align-items: center;
             gap: 8px;
-            visibility: hidden; /* Kann entfernt werden, wenn display: none ist */
-            opacity: 0; /* Kann entfernt werden, wenn display: none ist */
-            transition: visibility 0s 0.5s, opacity 0.5s linear;
         }
 
         /* Fix for volume slider centering */
@@ -285,7 +281,8 @@
             opacity: 1 !important;
         }
 
-        .badge-container .tooltip {
+        .badge-container .tooltip,
+        .social-link-container .tooltip { /* Added social-link-container */
             visibility: hidden;
             width: 120px;
             background-color: rgba(0, 0, 0, 0.8);
@@ -302,7 +299,8 @@
             transition: opacity 0.3s;
         }
 
-        .badge-container:hover .tooltip {
+        .badge-container:hover .tooltip,
+        .social-link-container:hover .tooltip { /* Added social-link-container */
             visibility: visible;
             opacity: 1 !important;
         }
@@ -415,6 +413,11 @@
             margin-top: 0;
             pointer-events: auto;
             opacity: 1 !important;
+        }
+
+        .social-link-container { /* New container for social icons to hold tooltip */
+            position: relative;
+            display: inline-block;
         }
 
         .social-icon {
@@ -703,6 +706,13 @@
                 margin-left: -50px;
                 bottom: 110%;
             }
+            
+            .social-link-container .tooltip { /* Added social-link-container for responsive */
+                width: 100px;
+                font-size: 12px;
+                margin-left: -50px;
+                bottom: 110%;
+            }
 
             #profile-bio {
                 font-size: 14px;
@@ -872,15 +882,36 @@
             <div class="profile-footer">
 
                 <div class="social-links">
-                    <a href="https://github.com/Zxpyar" target="_blank">
-                        <img src="assets/github.png" alt="GitHub" class="social-icon">
-                    </a>
-                    <a href="https://www.youtube.com/@Zxpyar" target="_blank">
-                        <img src="assets/youtube.png" alt="YouTube" class="social-icon">
-                    </a>
-                    <a href="https://www.tiktok.com/@Zxpyar" target="_blank">
-                        <img src="assets/tiktok.png" alt="TikTok" class="social-icon">
-                    </a>
+                                        <div class="social-link-container">
+                        <a href="https://steamcommunity.com/id/Zxpyar/" target="_blank">
+                            <img src="assets/steam.png" alt="Main Steam" class="social-icon">
+                        </a>
+                        <span class="tooltip">Main Steam</span>
+                    </div>
+                    <div class="social-link-container">
+                        <a href="https://github.com/Zxpyar" target="_blank">
+                            <img src="assets/github.png" alt="GitHub" class="social-icon">
+                        </a>
+                        <span class="tooltip">GitHub</span>
+                    </div>
+                    <div class="social-link-container">
+                        <a href="https://www.youtube.com/@Zxpyar" target="_blank">
+                            <img src="assets/youtube.png" alt="YouTube" class="social-icon">
+                        </a>
+                        <span class="tooltip">YouTube</span>
+                    </div>
+                    <div class="social-link-container">
+                        <a href="https://www.tiktok.com/@Zxpyar" target="_blank">
+                            <img src="assets/tiktok.png" alt="TikTok" class="social-icon">
+                        </a>
+                        <span class="tooltip">TikTok</span>
+                    </div>
+                    <div class="social-link-container">
+                        <a href="https://steamcommunity.com/id/EuropeWillNeverBeMuslim/" target="_blank" >
+                            <img src="assets/steam.png" alt="Cheating Alt" class="social-icon">
+                        </a>
+                        <span class="tooltip">Cheating Alt</span>
+                    </div>
                 </div>
 
 
@@ -889,7 +920,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                     </svg>
-                    <span id="visitor-count">69420</span>
+                    <span id="visitor-count">69419</span>
                     <span class="tooltip">Profile Views</span>
                 </div>
             </div>
@@ -911,7 +942,6 @@
             <div class="skill">
                 <div class="skill-name">
                     <img src="assets/cpp.png" alt="C++" class="skill-icon">
-                    <span>C++</span>
                     <span>75%</span>
                 </div>
                 <div class="skill-bar-container">
@@ -921,7 +951,6 @@
             <div class="skill">
                 <div class="skill-name">
                     <img src="assets/csharp.png" alt="C#" class="skill-icon">
-                    <span>C#</span>
                     <span>80%</span>
                 </div>
                 <div class="skill-bar-container">
